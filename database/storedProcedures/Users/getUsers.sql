@@ -1,0 +1,8 @@
+USE nodeJSProject;
+GO
+CREATE OR ALTER PROCEDURE getUsers
+AS
+BEGIN
+    SELECT * FROM users1 WHERE isDeleted = 0
+END
+GO

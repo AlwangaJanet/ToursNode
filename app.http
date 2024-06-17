@@ -1,0 +1,77 @@
+#### 
+# Register User
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Janet Anyona",
+  "email": "sistee001@gmail.com",
+  "password": "JanetAlwanga@1!",
+  "isAdmin": 1
+}
+#### Login User
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+  "email": "sistee001@gmail.com",
+  "password": "JanetAlwanga@1!"
+}
+// get all the users
+######
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMxMjAzLCJleHAiOjE3MTg2Mzg0MDN9.XELymKrYQ885sNgAhiy1KChix4fhGYXEX857iC4SSnM
+//Add Tours
+####
+POST http://localhost:4000/tours
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+Content-Type: application/json
+
+{
+  "name": "Samburu",
+  "description": "get to experience buffalo springs in samburu",
+  "price": 1000,
+  "duration": 3
+}
+// Get all tours
+####
+GET http://localhost:4000/tours
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+
+#### get a single tour
+GET http://localhost:4000/tour/0a5c3157-7df6-4a47-adee-44da671a47af
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+
+
+// add hotel
+####
+POST http://localhost:4000/hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+Content-Type: application/json
+
+{
+  "name": "Merica Hotel",
+  "location": "Nakuru",
+  "price": 1500
+}
+
+//Get all hotels
+####
+GET http://localhost:4000/hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+
+// add booking
+####
+POST http://localhost:4000/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjQ3NTg4LCJleHAiOjE3MTg2NjU1ODh9.k2BivO0-csxbOSwgRqwJxVmXx5HbExfBQZC8OEf0KKM
+Content-Type: application/json
+
+{
+  "userId": "ce67b107-53c8-44ec-8d13-5fabb6c94497",
+  "tourId": "0a5c3157-7df6-4a47-adee-44da671a47af",
+  "hotel_Id": "be8e108a-76ea-4dd8-b5fb-3c1df7d3b423"
+}
+
+
+
+
