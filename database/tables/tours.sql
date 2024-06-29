@@ -10,3 +10,5 @@ CREATE TABLE tours (
     updatedAt DATETIME DEFAULT GETDATE()
 )
 GO
+
+SELECT * FROM tours

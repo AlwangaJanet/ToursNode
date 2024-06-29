@@ -9,3 +9,5 @@ CREATE TABLE Hotels (
     updatedAt DATETIME DEFAULT GETDATE()
 )
 GO
+
+SELECT * FROM Hotels

@@ -10,4 +10,8 @@ CREATE TABLE users1 (
     isEmailSent INT DEFAULT 0,
     createdAt DATETIME DEFAULT GETDATE(),
     updatedAt DATETIME DEFAULT GETDATE()
-);
+)
+
+
+
+SELECT * FROM users1

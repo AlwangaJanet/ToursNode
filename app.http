@@ -63,15 +63,30 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5M
 // add booking
 ####
 POST http://localhost:4000/bookings
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjQ3NTg4LCJleHAiOjE3MTg2NjU1ODh9.k2BivO0-csxbOSwgRqwJxVmXx5HbExfBQZC8OEf0KKM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE5MTMzNjU3LCJleHAiOjE3MTkxNDA4NTd9.6eDBMFPqGgaHkqTIib8Jbhe1A_dazQp2qEdpRaGjMzw
 Content-Type: application/json
 
 {
-  "userId": "ce67b107-53c8-44ec-8d13-5fabb6c94497",
-  "tourId": "0a5c3157-7df6-4a47-adee-44da671a47af",
-  "hotel_Id": "be8e108a-76ea-4dd8-b5fb-3c1df7d3b423"
+  "userId": "ea0c7593-1b92-4725-83b4-2191dcfdb424",
+  "tourId": "39a60bcf-7c4d-4459-9557-111c2ae725ad",
+  "hotel_Id": "9f4bcbaa-17ed-41ac-bb33-bc294a573652"
 }
 
+//Get all bookings
+#####
+GET http://localhost:4000/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4Nzg3MjA3LCJleHAiOjE3MTg4MDUyMDd9.pmBc0yZrcAKLIW6807HQizBhM-QSH4QQYaJn_KsqQuQ
 
+// Get a single booking
+####
+GET http://localhost:4000/bookings/23be406c-aa5a-4add-8b45-577a95ad2367
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE5MTMzMzY5LCJleHAiOjE3MTkxNDA1Njl9.iSA-6pVvtJBL8-ITrkyzNfLUJSFV_S0b3fnr8d9AvRo
 
+### Update Booking
+PUT http://localhost:3000/bookings/23be406c-aa5a-4add-8b45-577a95ad2367
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE5MTMzMzY5LCJleHAiOjE3MTkxNDA1Njl9.iSA-6pVvtJBL8-ITrkyzNfLUJSFV_S0b3fnr8d9AvRo
+Content-Type: application/json
 
+{
+  "status": "confirmed"
+}

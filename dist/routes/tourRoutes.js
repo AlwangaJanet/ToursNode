@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const tourControllers_1 = require("../controllers/tourControllers");
+const authMiddle_1 = require("../middlewares/authMiddle");
+const tourRouter = (0, express_1.Router)();
+tourRouter.post('/', authMiddle_1.verifyToken, authMiddle_1.isAdmin, tourControllers_1.addTour);
+tourRouter.get('/', authMiddle_1.verifyToken, tourControllers_1.getTours);
+tourRouter.get('/:id', authMiddle_1.verifyToken, tourControllers_1.getTour);
+tourRouter.put('/:id', authMiddle_1.verifyToken, authMiddle_1.isAdmin, tourControllers_1.updateTour);
+tourRouter.delete('/:id', authMiddle_1.verifyToken, authMiddle_1.isAdmin, tourControllers_1.deleteTour);
+exports.default = tourRouter;
