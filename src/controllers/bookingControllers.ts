@@ -48,7 +48,7 @@ export const getBookings = async (req: Request, res: Response) => {
   }
 }
 
-export const getBooking = async (req: Request, res: Response) => {
+export const getBooking = async (req: Request<{id:string}>, res: Response) => {
   try {
     const booking = await dbHelper.get('getBooking', { id: req.params.id })
     if (!booking) return res.status(404).json({ message: 'Booking not found' })
@@ -58,7 +58,7 @@ export const getBooking = async (req: Request, res: Response) => {
   }
 }
 
-export const updateBooking = async (req: Request, res: Response) => {
+export const updateBooking = async (req: Request<{id:string}>, res: Response) => {
   try {
     const { status } = req.body
 
@@ -70,7 +70,7 @@ export const updateBooking = async (req: Request, res: Response) => {
   }
 }
 
-export const cancelBooking = async (req: Request, res: Response) => {
+export const cancelBooking = async (req: Request<{id:string}>, res: Response) => {
   try {
     await dbHelper.exec('cancelBooking', { id: req.params.id })
     res.json({ message: 'Booking cancelled successfully' })

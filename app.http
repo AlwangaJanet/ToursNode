@@ -46,13 +46,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5M
 // add hotel
 ####
 POST http://localhost:4000/hotels
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjMyNTY5LCJleHAiOjE3MTg2Mzk3Njl9.Gq5Et2N6nfp3YnYhlATNe3ekxXynzHMRhDO2EEwXU-w
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzIwMDA5MTkzLCJleHAiOjE3MjAwMTYzOTN9.cwem57S_6KZVJA2GMfmSjtH_ieljqoZIgFCUBKpe3Tc
 Content-Type: application/json
 
 {
   "name": "Merica Hotel",
   "location": "Nakuru",
-  "price": 1500
+  "price": 1500,
+  "imageUrl":"https://images.trvl-media.com/lodging/30000000/29030000/29027900/29027886/eeccc081_z.jpg"
 }
 
 //Get all hotels

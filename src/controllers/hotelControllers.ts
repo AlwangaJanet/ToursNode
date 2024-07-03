@@ -26,7 +26,7 @@ export const getHotels = async (req: Request, res: Response) => {
   }
 }
 
-export const getHotel = async (req: Request, res: Response) => {
+export const getHotel = async (req: Request<{id:string}>, res: Response) => {
   try {
     const hotel = await dbHelper.get('getHotel', { id: req.params.id })
     if (!hotel) return res.status(404).json({ message: 'Hotel not found' })
@@ -36,7 +36,7 @@ export const getHotel = async (req: Request, res: Response) => {
   }
 }
 
-export const updateHotel = async (req: Request, res: Response) => {
+export const updateHotel = async (req: Request<{id:string}>, res: Response) => {
   try {
     const { name, location, price } = req.body
 
@@ -48,7 +48,7 @@ export const updateHotel = async (req: Request, res: Response) => {
   }
 }
 
-export const deleteHotel = async (req: Request, res: Response) => {
+export const deleteHotel = async (req: Request<{id:string}>, res: Response) => {
   try {
     await dbHelper.exec('deleteHotel', { id: req.params.id })
     res.json({ message: 'Hotel deleted successfully' })

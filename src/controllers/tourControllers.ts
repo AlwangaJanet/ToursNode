@@ -26,7 +26,7 @@ export const getTours = async (req: Request, res: Response) => {
   }
 };
 
-export const getTour = async (req: Request, res: Response) => {
+export const getTour = async (req: Request<{id:string}>, res: Response) => {
   try {
     const tour = await dbHelper.get('getTour', { id: req.params.id })
     if (!tour) return res.status(404).json({ message: 'Tour not found' })
@@ -36,7 +36,7 @@ export const getTour = async (req: Request, res: Response) => {
   }
 }
 
-export const updateTour = async (req: Request, res: Response) => {
+export const updateTour = async (req: Request<{id:string}>, res: Response) => {
   try {
     const { name, description, price, duration } = req.body
 
@@ -48,7 +48,7 @@ export const updateTour = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteTour = async (req: Request, res: Response) => {
+export const deleteTour = async (req: Request<{id:string}>, res: Response) => {
   try {
     await dbHelper.exec('deleteTour', { id: req.params.id })
     res.json({ message: 'Tour deleted successfully' })

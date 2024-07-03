@@ -3,6 +3,7 @@ export interface Hotel {
     name: string
     location: string
     price: number
+    imageUrl: string
     createdAt?: Date
     updatedAt?: Date
   }
